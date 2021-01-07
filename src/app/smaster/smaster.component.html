@@ -1,0 +1,91 @@
+
+   
+
+	
+
+
+<div class="container-fluid" >
+
+
+    <nav class="navbar navbar-default container-fluid" role="navigation" style="margin-bottom: 0; background-color: #32527D">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand titlehms" style="color: white" onMouseOver="this.style.color='#85E3EB'"  onMouseOut="this.style.color='white'" routerLink="/smaster">Hostel Management System</a>
+        </div>
+  
+
+        <ul class="nav navbar-top-links navbar-right" style="display: flex;">
+            <li class="center-block">
+                <img class="img-circle center-block" height="40" width="40" src="../assets/img5.jpeg" alt="">
+            </li>
+
+            <li>
+                <a style="color: white; background-color:inherit;" onMouseOver="this.style.color='#85E3EB'"  onMouseOut="this.style.color='white'" href="#">{{name}}</a>
+            </li> 
+            <li class="dropdown">
+                <a style="color: white; background-color: inherit;" onMouseOver="this.style.color='#85E3EB'"  onMouseOut="this.style.color='white'" class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-bars fa-fw"></i>Menu<i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a routerLink="profile/1258035"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                    </li>
+                   
+                    <li>
+                        <a routerLink="payment"><i class="fa fa-money fa-fw"></i> Payment Add</a>
+                    </li>
+                    <li>
+                        <a routerLink="payment-view"><i class="fa fa-money fa-fw"></i> Payment view</a>
+                        
+                    </li>
+                    <li class="divider"></li>
+                    <li><a (click)="logout()" routerLink="/login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </nav>
+</div>
+    <div class="container">
+    <router-outlet></router-outlet>
+    </div>
+    <footer class="container-fluid navbar-fixed-bottom">
+    <div class="row">
+        <div class="col-lg-12 bg-success text-center">
+            <div class="row ">
+                <!-- <div class="col-lg-4">
+                    <h3 class="">Email</h3>
+                    Sand mail to admin use this email address
+                    <p> <strong>masumbillah546@gmail.com</strong></p>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Phone</h3>
+                    To talk with admin dail this phone number
+                    <p> <strong>+8801738004246</strong></p>
+                </div>
+                <div class="col-lg-4">
+                    <h3>Address</h3>
+                    <p><strong>Himanta Student Hostel</strong></p>11/ক, West Jatrabari, Dhaka, Bangladesh 
+                </div> -->
+
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <p>
+                    © 2020 Super Home. All Rights Reserved.
+                    </p>
+                </div>
+                <div class="col-lg-4"></div>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+

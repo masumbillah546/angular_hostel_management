@@ -1,0 +1,215 @@
+<!-- <app-navbar></app-navbar>
+<div class="container">
+    <router-outlet></router-outlet>
+    <h3 class="well">This is a simple Angular 2 web application with CRUD operation.The front-end is made 
+        of Angular 2 framework and the Back-End is made of  PHP and MySQL/MariaDB.    
+    </h3>
+</div>
+ -->
+
+ <!--  <router-outlet></router-outlet> -->
+
+
+
+
+
+<nav style="background-color: #32527D" class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" style="color: white" onMouseOver="this.style.color='#85E3EB'"  onMouseOut="this.style.color='white'" routerLink="panel">{{ title }}</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" >
+       <!--  <li class=""><a href="#">Home</a></li>
+        <li><a href="#">About</a></li> -->
+    <!--     <li><a href="#" style="color: white"><span>Admin Name: </span><i>{{currentUser.firstName +" "+ currentUser.lastName}}</i></a></li> -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+        <li *ngIf=sms class="dropdown"><a (click)="yes()" class="dropdown-toggle" data-toggle="dropdown" href="/dashboard" style="color: white;background-color: inherit;" onMouseOver="this.style.color='#85E3EB'"  onMouseOut="this.style.color='white'">Inbox <span class="glyphicon glyphicon-envelope"></span> <span class="badge badge-light">{{sms.unseen_notification}}</span> </a>
+          <ul style=" height: 300px; width: 300px" class="dropdown-menu dropdown-user">
+            <li *ngFor="let mg of sms.notification">
+              <a href="/dashboard">
+                <b>{{mg.name}}</b><br><i>{{mg.comment_text}}</i>
+              </a>
+            </li>
+          </ul>
+
+
+        </li>
+
+         <li><a href="#" style="color: white" ><span>Admin Name: {{name}} </span><i onMouseOver="this.style.color='#85E3EB'"  onMouseOut="this.style.color='white'"#85E3EB>
+          
+
+         </i></a></li>
+
+        <li><a style="color: white" onMouseOver="this.style.color='#85E3EB'"  onMouseOut="this.style.color='white'" (click)="logout()" routerLink="/login"><span  class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center ">    
+  <div class="row content">
+    <div class="col-lg-2 sidenav">
+      <h5>Student Management</h5>
+      <p><a routerLink="admission">Admission</a></p>
+      <p><a routerLink="student-list">Student list</a></p>
+         <h5>Student Payment</h5>
+      <p><a routerLink="payment">Payment Add</a></p>
+      <p><a routerLink="payment-view">Payment View</a></p>
+      <h5>Meal Management</h5>
+      <p><a routerLink="meal-add">Meal Add</a></p>
+      <p><a routerLink="meal-view">Meal View</a></p>
+      <h5>Cost Management</h5>
+      <p><a routerLink="hostel-cost">Hostel Cost</a></p>
+      <p><a routerLink="cost-view">Cost View</a></p>
+     <h5>Employee Management</h5>
+      <p><a routerLink="add">Employee Add</a></p>
+      <p><a routerLink="employee">Employee list</a></p>
+      
+      
+      
+    </div>
+    <div class="col-lg-10 text-left"> 
+     <!--  <h1>Dashboard</h1><hr> -->
+
+      <router-outlet></router-outlet>
+     
+
+   <!-- <div class="row">
+        <div class="col-lg-6">
+            <div class="col-lg-6 col-md-6">
+                <div class="panel" style="background-color: #007BFF; color: white">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class=""></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">10</div>
+                                <div>Total Employee</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="./ui/employee/view.php">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="panel " style="background-color: #DC3545; color: white">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class=""></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">34</div>
+                                <div>Current Student</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="panel" style="background-color: #28A745; color: white">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class=""></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">10</div>
+                                <div>Total Rooms</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="panel" style="background-color: #FFC107; color: white">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class=""></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                                <div class="huge">50</div>
+                                <div>Today's Meal</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+
+    </div> -->
+            
+</div>
+<!-- ---------------------------------- -->
+
+  <!--   <div class="col-lg-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+ -->
+
+
+
+
+
+<!-- ------------------------------------- -->
+<!-- 
+<h1>Hi {{currentUser.firstName}}!</h1>
+<p>You're logged in with Angular 6!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul>
+<p><a [routerLink]="['/login']">Logout</a></p> -->
+

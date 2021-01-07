@@ -1,0 +1,69 @@
+
+
+
+<div id="page-wrapper">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header titlehms"><i class="fa fa-hand-o-right"></i>Payment View</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading" *ngIf="students">
+                   <div style="font-size: 20px">
+                       <b> Name: </b><span>{{students[0].name}}</span> | 
+                    <b> ID: </b><span>{{students[0].userId}}</span>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    
+                  <div class="table-responsive">
+                                <table id="paymentList" class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+
+                                            <!-- <th>Id</th>
+                                            <th>Name</th> -->
+                                             <th>Payment Date</th>
+                                             <th>Paid By</th>
+                                             <th>Transection/Mobile No</th>
+                                             <th>Amount</th>
+                                             <th>Remark</th>
+									    <!-- 	<th > Action</th >
+									         <th>Is Approve</th> -->
+            
+
+
+
+ 										</tr>
+                                    </thead>
+                                    <tbody>
+                                    	<tr *ngFor="let student of students">
+                                    		<!-- <td>{{student.userId}}</td>
+                                            <td>{{student.name}}</td> -->
+                                            <td>{{student.transDate}}</td>
+                                    		<td>{{student.paymentBy}}</td>
+                                    		<td>{{student.transNo}}</td>
+                                    		<td>{{student.amount}}</td>
+                                    		<td>{{student.remark}}</td>
+                                    		<!-- <td></td>
+                                    		<td></td> -->
+                                    		
+                                    	</tr>
+         							 </tbody>
+                                </table>
+                            </div>  
+
+
+                </div>
+                <!-- /.panel-body -->
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+</div>
+
